@@ -1,5 +1,3 @@
-#exec(open("dbml_post_1115.py", errors='ignore').read())
-
 import requests
 import os
 import json
