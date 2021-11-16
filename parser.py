@@ -5,10 +5,10 @@ from pydantic import BaseModel, validator
 from collections import defaultdict
  
 
-with open("manifest_demo_1115.json", encoding="utf8") as f:
+with open("manifest.json", encoding="utf8") as f:
     man = json.load(f, strict=False)
     
-with open("catalog_demo_1115.json", encoding="utf8") as f:
+with open("catalog.json", encoding="utf8") as f:
     cat = json.load(f, strict=False)
     
 all_tables = list(man['parent_map'].keys())
