@@ -7,7 +7,7 @@ import datetime
 Uploads dbml files to API
 '''
 
-#path of the folder which contains the dbml files that must be uploaded to the API
+#path of the folder which contains the dbml files that must be uploaded to the API.User must manually create such a folder and put all dmbl files in it
 path = r'...\dbml_files'
 files = os.listdir(path)
 
