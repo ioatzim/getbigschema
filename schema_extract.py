@@ -12,10 +12,12 @@ from gsheetsdb import connect
 import itertools
 import time
 
-#A. Creation of dbml files:
-
-#1. databases
-#For each one of your databases, add one record to the following list (records must be separated with comma). Each record must include the name of the database (select a name of your choice), and the url of the database, based on sqlalchemy instructions found here: https://docs.sqlalchemy.org/en/14/core/engines.html:
+'''
+Creation of dbml files:
+1. databases
+For each database, add one record to the following list (records must be separated with comma). Each record must include the name of the database 
+(you can select a name of your choice), and the url of the database, based on sqlalchemy instructions found here: https://docs.sqlalchemy.org/en/14/core/engines.html:
+'''
 
 databases = [
 {'name': 'database_1', 'url': 'sqlite:///test.db'}
@@ -47,17 +49,20 @@ for database in databases:
             output.write("}\n\n")
         for ref in refs:
             output.write('\n' + ref)
-            
-#2. spreadsheets
-conn = connect()
 
-#For each one google spreadsheet, add one record to the following list. Each record must include the name of the sheet (select a name of your choice), and the url of the sheet. Records must be separated with comma
+'''
+2. spreadsheets
+For each one google spreadsheet, add one record to the following list. Each record must include the name of the sheet (you can select a name of your choice), and the url of the sheet. 
+Records must be separated with comma
+'''
+
+conn = connect()
 
 google_sheets = [
 {'name': 'Hospital Bed Utilization', 'url': "https://docs.google.com/spreadsheets/d/1I1S9WW4OEHaNpqebM0L5sumoElrmVBCXCTVItHNZdbs/edit?usp=sharing"}
 ]
 
-#The following piece of code generates one dbml file for all google sheets. Dbml file is saved in the same folder with the python script:
+#The following generates one dbml file for all google sheets. Dbml file is saved in the same folder with the python script:
 with open("spreadsheets.dmbl", "w") as output:
     for file in google_sheets:
         output.write('table "'+ file['name'] +'" {\n')
