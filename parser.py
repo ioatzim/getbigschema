@@ -4,10 +4,11 @@ from enum import Enum
 from pydantic import BaseModel, validator
 from collections import defaultdict
  
-
+#read manifest.json
 with open("manifest.json", encoding="utf8") as f:
     man = json.load(f, strict=False)
-    
+
+#read catalog.json
 with open("catalog.json", encoding="utf8") as f:
     cat = json.load(f, strict=False)
     
@@ -81,6 +82,6 @@ with open(f"{db_name}_full.dmbl", "w") as output:
         output.write("ref_children: " + str(man['child_map'][table_name]))
         output.write('\n\n')
 
-
+#save order/gridX of each table in json format (key:value pairs)
 with open('topological_sort.json', 'w') as f:
     json.dump(all_tables, f) 
