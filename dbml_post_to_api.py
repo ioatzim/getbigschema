@@ -4,16 +4,17 @@ import json
 import datetime
 
 '''
-Uploads dbml files to API, using a POST request
+Uploads dbml files to API
 '''
 
-#path of the file that contains the dbml files that must be uploaded to API
-files = os.listdir(r'C:\Users\grbus\Dropbox\Jobs\upwork\projects\pr36_PK_python library for DBs spreadsheets\getbigschema\dbml_files')
+#path of the folder which contains the dbml files that must be uploaded to the API
+path = r'...\dbml_files'
+files = os.listdir(path)
 
 #url of the API
 url='http://ec2-54-167-67-34.compute-1.amazonaws.com/api/dbmls'
 
-#main code. It uploads all dbmls files to API, receives one id per file and creates a json file that contains all files and their associated ids
+#Uploads all dbmls files to API, on execution it returns one id per file and creates a json file which contains all files with their associated ids in key:value format
 response_ids = {}
 for file in files:
     with open(file, encoding="utf8") as f:
