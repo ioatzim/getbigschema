@@ -14,4 +14,4 @@ Files:
    User must add manually a folder-path that contains dbml files. On execution, code uploads all dbml files from this folder, to the API and creates a json file that contains a    dictionary with filename as key and id as value (eg "demo_full.dmbl": "6192b2c21c2a512293fea123"). This id can be used to get this file from the API, with the file                get_dbmlf_from_api.py
    
 4. get_dmbl_from_api.py
-   User must add the id of the dbml file (found in the 'response_ids.json' file generated from dbml_post_to_api.py). On execution, code returns the dbml file from the api and assigns it to a variable called dbml
+   User must add the id of the dbml file (found in the 'response_ids.json' file generated from dbml_post_to_api.py). On execution, code returns the dbml file from the api and assigns it to a variable called dbml_file
