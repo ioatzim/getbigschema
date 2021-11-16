@@ -1,0 +1,48 @@
+table "category" {
+   "id" INTEGER // 
+   "cat_name" TEXT // 
+   "general_category" TEXT // 
+   "FK_gen_cat_id" INTEGER // 
+   "cat_engl" NULL // 
+}
+
+table "general_category" {
+   "id" INTEGER // 
+   "general_category" TEXT // 
+}
+
+table "sqlite_sequence" {
+   "name" NULL // 
+   "seq" NULL // 
+}
+
+table "stars" {
+   "postid" INTEGER // 
+   "giver" VARCHAR // 
+   "receiver" VARCHAR // 
+   "rate" INTEGER // 
+}
+
+table "tags" {
+   "id" INTEGER [primary key] // 
+   "tag_category" NULL // 
+   "tag_category_engl" NULL // 
+   "user" NULL // 
+   "time" NULL // 
+   "thread" NULL // 
+   "url" NULL // 
+   "postid" NULL // 
+}
+
+table "user" {
+   "id" INTEGER [primary key] // 
+   "email" VARCHAR // 
+   "username" VARCHAR // 
+   "password_" VARCHAR // 
+   "passwordcheck_" VARCHAR // 
+   "registration_date" NULL // 
+   "job" NULL // 
+   "location" NULL // 
+   "ipografi" NULL // 
+}
+

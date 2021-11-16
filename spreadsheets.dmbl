@@ -1,0 +1,12 @@
+table "Hospital Bed Utilization" {
+   "State" object
+   "Number Hospitals" float64
+   "Staffed Beds" float64
+   "Total Discharges" float64
+   "Patient Days" float64
+   "Gross Patient Revenue ($000)" float64
+   "Utilization Rate" float64
+   "Population" float64
+   "Beds per 1000" float64
+}
+
