@@ -4,4 +4,3 @@ gspread
 sqlalchemy
 pandas
 gsheetsdb
-valentine
