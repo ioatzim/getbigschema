@@ -1,0 +1,99 @@
+{
+    "metadata":
+    {
+        "dbt_schema_version": "catalog.json",
+        "dbt_version": "0.19.1",
+        "generated_at": "2021-11-06T23:07:35.666246Z",
+        "invocation_id": "",
+        "env":
+        {}
+    },
+    "nodes":
+    {
+        "model.demo_dbt.users":
+        {
+            "metadata":
+            {
+                "type": "VIEW",
+                "schema": "demo",
+                "name": "ACCOUNTS",
+                "database": "demo_dev",
+                "comment": null,
+                "owner": "demo_owner"
+            },
+            "columns":
+            {
+                "ACCOUNT_ID":
+                {
+                    "type": "NUMBER",
+                    "index": 1,
+                    "name": "ACCOUNT_ID",
+                    "comment": null
+                },
+                "NAME":
+                {
+                    "type": "TEXT",
+                    "index": 2,
+                    "name": "NAME",
+                    "comment": null
+                },
+                "ACCOUNT_STATUS_ID":
+                {
+                    "type": "NUMBER",
+                    "index": 3,
+                    "name": "ACCOUNT_STATUS_ID",
+                    "comment": null
+                },
+                "TAX_IDENTIFIER":
+                {
+                    "type": "TEXT",
+                    "index": 4,
+                    "name": "TAX_IDENTIFIER",
+                    "comment": null
+                },
+                "CREATED_AT":
+                {
+                    "type": "TIMESTAMP_NTZ",
+                    "index": 5,
+                    "name": "CREATED_AT",
+                    "comment": null
+                }
+            },
+            "unique_id": "model.demo_dbt"
+        }
+    },    
+    "sources":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        {
+            "metadata":
+            {
+                "type": "BASE TABLE",
+                "schema": "demo",
+                "name": "FEATURE",
+                "database": "demo",
+                "comment": null,
+                "owner": "TESTA"
+            },
+            "columns":
+            {
+                "FEATURE_ID":
+                {
+                    "type": "NUMBER",
+                    "index": 1,
+                    "name": "FEATURE_ID",
+                    "comment": null
+                },
+                "NAME":
+                {
+                    "type": "TEXT",
+                    "index": 2,
+                    "name": "NAME",
+                    "comment": null
+                }
+            },
+            "unique_id": "source.demo_dbt"
+        }
+    },    
+    "errors": null
+}

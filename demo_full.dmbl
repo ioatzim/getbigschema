@@ -1,0 +1,21 @@
+table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
+   "FEATURE_ID" NUMBER
+   "NAME" TEXT
+   Note: "BASE TABLE"
+}
+
+ref_parents: []
+ref_children: ['model.demo_dbt.users']
+
+table "model.demo_dbt.users" [gridX: 1] {
+   "ACCOUNT_ID" NUMBER
+   "NAME" TEXT
+   "ACCOUNT_STATUS_ID" NUMBER
+   "TAX_IDENTIFIER" TEXT
+   "CREATED_AT" TIMESTAMP_NTZ
+   Note: "VIEW"
+}
+
+ref_parents: ['source.demo_dbt.events.generic_metrics_master']
+ref_children: []
+

@@ -1,0 +1,250 @@
+{
+    "metadata":
+    {
+        "dbt_schema_version": "manifest.json",
+        "dbt_version": "0.19.1",
+        "generated_at": "2021-11-06T23:07:29.552472Z",
+        "invocation_id": "",
+        "env":
+        {},
+        "project_id": "",
+        "user_id": null,
+        "send_anonymous_usage_stats": false,
+        "adapter_type": "snowflake"
+    },
+    "nodes":
+    {
+        "model.demo_dbt.users":
+        {
+            "raw_sql": "select ...",
+            "compiled": true,
+            "resource_type": "model",
+            "depends_on":
+            {
+                "macros":
+                [],
+                "nodes":
+                [
+                    "source.demo_dbt.user",
+                    "source.demo_dbt.invitation"
+                ]
+            },
+            "config":
+            {
+                "enabled": true,
+                "materialized": "view",
+                "persist_docs":
+                {},
+                "vars":
+                {},
+                "quoting":
+                {},
+                "column_types":
+                {},
+                "alias": null,
+                "schema": null,
+                "database": null,
+                "tags":
+                [],
+                "full_refresh": null,
+                "post-hook":
+                [],
+                "pre-hook":
+                []
+            },
+            "database": "demo_dev",
+            "schema": "demo",
+            "fqn":
+            [
+                "demo_dbt",
+                ""
+            ],
+            "unique_id": "model.demo_dbt.users",
+            "package_name": "demo_dbt",
+            "root_path": "",
+            "path": "all_users.sql",
+            "original_file_path": "models/all_users.sql",
+            "name": "all_users",
+            "alias": "all_users",
+            "checksum":
+            {
+                "name": "demo",
+                "checksum": ""
+            },
+            "tags":
+            [],
+            "refs":
+            [],
+            "sources":
+            [
+                [
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    ""
+                ]
+            ],
+            "description": "Select *all* entries in source `user` table",
+            "columns":
+            {
+                "user_id":
+                {
+                    "name": "user_id",
+                    "description": "",
+                    "meta":
+                    {},
+                    "data_type": null,
+                    "quote": null,
+                    "tags":
+                    []
+                }
+            },
+            "meta":
+            {},
+            "docs":
+            {
+                "show": true
+            },
+            "patch_path": "models/all.yml",
+            "build_path": "",
+            "deferred": false,
+            "unrendered_config":
+            {
+                "materialized": "view"
+            },
+            "compiled_sql": "",
+            "extra_ctes_injected": true,
+            "extra_ctes":
+            [],
+            "relation_name": ""
+        }
+    },            
+    "sources":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        {
+            "fqn":
+            [
+                "demo_dbt",
+                "events",
+                "generic_metrics_master"
+            ],
+            "database": "",
+            "schema": "",
+            "unique_id": "",
+            "package_name": "",
+            "root_path": "",
+            "path": "",
+            "original_file_path": "",
+            "name": "",
+            "source_name": "",
+            "source_description": "",
+            "loader": "",
+            "identifier": "",
+            "resource_type": "source",
+            "quoting":
+            {
+                "database": null,
+                "schema": null,
+                "identifier": null,
+                "column": null
+            },
+            "loaded_at_field": null,
+            "freshness":
+            {
+                "warn_after": null,
+                "error_after": null,
+                "filter": null
+            },
+            "external": null,
+            "description": "The \"Generic Metrics Master\" table of the respective target\n",
+            "columns":
+            {},
+            "meta":
+            {},
+            "source_meta":
+            {},
+            "tags":
+            [],
+            "config":
+            {
+                "enabled": true
+            },
+            "patch_path": null,
+            "unrendered_config":
+            {},
+            "relation_name": ""
+        }
+    },    
+    "macros":
+    {
+        "macro.demo_dbt.test":
+        {
+            "unique_id": "",
+            "package_name": "demo_dbt",
+            "root_path": "",
+            "path": "",
+            "original_file_path": "",
+            "name": "",
+            "macro_sql": "",
+            "resource_type": "macro",
+            "tags":
+            [],
+            "depends_on":
+            {
+                "macros":
+                []
+            },
+            "description": "",
+            "meta":
+            {},
+            "docs":
+            {
+                "show": true
+            },
+            "patch_path": null,
+            "arguments":
+            []
+        }
+    },    
+    "docs":
+    {
+        "demo_dbt.__overview__":
+        {
+            "unique_id": "demo_dbt.__overview__",
+            "package_name": "demo_dbt",
+            "root_path": "",
+            "path": "overview_page.md",
+            "original_file_path": "doc/overview_page.md",
+            "name": "__overview__",
+            "block_contents": ""
+        }
+    },  
+    "exposures":
+    {},
+    "selectors":
+    {},
+    "disabled":
+    [],
+    "parent_map":
+    {
+        "model.demo_dbt.users":
+        [
+            "source.demo_dbt.events.generic_metrics_master"
+			
+        ],
+		"source.demo_dbt.events.generic_metrics_master":
+		[]
+    },
+    "child_map":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        [
+            "model.demo_dbt.users"
+        ],
+		"model.demo_dbt.users":
+		[]
+    }
+	}
