@@ -2,7 +2,7 @@
 Code purpose: Creation of dbml files from given databases and spreadsheets and upload to API
 
 Files:
-1. schemaextract.py
+1. schema_extract.py
    User must add databases (name and url) and google spreadsheets (name and url) manually, to databases = [...] and spreadsheets = [...] code lines (see more instructions in      comments inside the files)
    On execution, code creates one dbml file per database and one dbml file for all the spreadsheets.
    
