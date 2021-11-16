@@ -1,5 +1,3 @@
-#exec(open("schemaextract_1115.py", errors='ignore').read())
-
 import os
 import getschema
 import gspread
