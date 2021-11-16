@@ -1,5 +1,3 @@
-#exec(open("parser_1115.py", errors='ignore').read())
-
 import json
 from typing import Dict, List, Optional
 from enum import Enum
