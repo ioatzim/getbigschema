@@ -18,7 +18,14 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 Examples
 
 
+Example1: # DBT
+DBT example --> manifest.json, .. --> to how to run "dbt2dbml.py"
 
+Example2: # For SQL DBs (BigQuery, RedShift, etc.)
+..--> how to run "schema2dbml.py" for some db (e.g, MySql)
+
+Example3: # POST to bigschema.io app
+--> how to run "dbml2draw.py"
 
 
 
