@@ -1,39 +1,4 @@
 # getbigschema
-Creation of dbml files from given databases and spreadsheets.
-Upload dbmls to API
-
-Requirements
-Requires Python 3.6 or above. ???
-
-Main features
-The main features provided by getbigschema are:
-Generating dbml files, from existing databases and spreadsheets
-Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
-Uploading dbml files to API
-Requesting dbml files from API
-
-Usage
-Code can be executed in any Python interpreter/terminal or framework, including Jupyter, Conda, Pycharm, etc
-
-Examples
-
-
-Example1: # DBT
-DBT example --> manifest.json, .. --> to how to run "dbt2dbml.py"
-
-Example2: # For SQL DBs (BigQuery, RedShift, etc.)
-..--> how to run "schema2dbml.py" for some db (e.g, MySql)
-
-Example3: # POST to bigschema.io app
---> how to run "dbml2draw.py"
-
-
-
-Code of Conduct
-All contributors are expected to follow the PyPA Code of Conduct.
-
-----------------------------------------------
-
 
 Files:
 1. schema_extract.py
