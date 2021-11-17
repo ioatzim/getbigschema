@@ -1,5 +1,32 @@
 # getbigschema
-Code purpose: Creation of dbml files from given databases and spreadsheets and upload to API
+Creation of dbml files from given databases and spreadsheets.
+Upload dbmls to API
+
+Requirements
+Requires Python 3.6 or above. ???
+
+Main features
+The main features provided by getbigschema are:
+Generating dbml files, from existing databases and spreadsheets
+Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
+Uploading dbml files to API
+Requesting dbml files from API
+
+Usage
+Code can be executed in any Python interpreter/terminal or framework, including Jupyter, Conda, Pycharm, etc
+
+Examples
+
+
+
+
+
+
+Code of Conduct
+All contributors are expected to follow the PyPA Code of Conduct.
+
+----------------------------------------------
+
 
 Files:
 1. schema_extract.py
@@ -15,3 +42,5 @@ Files:
    
 4. get_dmbl_from_api.py
    User must manually add the id of the dbml file (found in the 'response_ids.json' file generated from dbml_post_to_api.py). On execution, code returns the dbml file from the    api and assigns it to a variable called dbml_file
+   
+
