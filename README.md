@@ -1,6 +1,6 @@
 ## getbigschema
 
-#Files:
+# Files:
 1. schema_extract.py
    User must add databases (name and url) and google spreadsheets (name and url) manually, to databases = [...] and spreadsheets = [...] code lines (see more instructions in      comments inside the files)
    On execution, code creates one dbml file per database and one dbml file for all the spreadsheets.
