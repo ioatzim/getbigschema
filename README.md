@@ -6,7 +6,7 @@ Upload dbmls to API
 Requires Python 3.6 or above. ???
 
 ### Main features
-The main features provided by getbigschema are:
+getbigschema provides the following features:
 * Generating dbml files, from existing databases and spreadsheets
 * Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
 * Uploading dbml files to API
@@ -21,7 +21,7 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 ### 1. Turn DBT output files to DBML
 DBT (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views. Details of these tables and views are included in dbt-output files manifest.json and catalog.json. Getbigschema can read these files and produce dbml reports. The dbml file looks like below:
 
-###### dbml_file example
+##### dbml_file example:
 ```
 table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
    "FEATURE_ID" NUMBER
@@ -47,6 +47,7 @@ table "model.demo_dbt.users" [gridX: 1] {
 
 Output also includes topological_sort.json, a file that includes all tables, with their gridX order. This order represents the stage that the table was created at, for example it is 0 for source tables, 1 for tables (or views) created based on source ones, 2 for tables (or views) created based on tables of order 0 and 1 etc. The      general rule is that each table has an order equal with the max order of its creators, plus 1  
 
+##### topological_sort.json file example:
 ```
 {"source.demo_dbt.events.generic_metrics_master": 0, "model.demo_dbt.users": 1}
 ```
@@ -80,6 +81,7 @@ All we need is the API url and a folder with all dbml files to upload
 When upload is completed, api returns a unique id per file.
 All ids are save in the file "response_ids.json", in key-value pairs, as below:
 
+##### response_ids.json file example:
 ```
 {
 "file_1.dmbl": "6192b2c21c2a512293fea622",
@@ -92,6 +94,7 @@ All ids are save in the file "response_ids.json", in key-value pairs, as below:
 ### 4. Retreive DBML files from bigschema.io app
 Using the API url and the unique id of the file form previous step, we can retreive the file from the API with the following 2 commands:
 
+##### code th retreive a dbml from api:
 ```
 res = requests.get(f'{url}/{id}')
 file = json.loads(res.json()['contents'])
