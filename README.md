@@ -48,15 +48,19 @@ table "model.demo_dbt.users" [gridX: 1] {
 #### Example2: # For SQL DBs (BigQuery, RedShift, etc.)
 getbigschema can turn SQL schemas to dbml files. Most databases are supported. User must enter the database details in schema_to_dbml.py file in the folollowing field:
 
-```databases = [
+```
+databases = [
 {'name': 'database_1', 'url': 'sqlite:///test.db'}
-]```
+]
+```
 
 It also supports google spreadsheets. User must enter the google spreadsheet url in the following field:
 
-```google_sheets = [
+```
+google_sheets = [
 {'name': 'Hospital Bed Utilization', 'url': "https://docs.google.com/spreadsheets/d/1I1S9WW4OEHaNpqebM0L5sumoElrmVBCXCTVItHNZdbs/edit?usp=sharing"}
-]```
+]
+```
 
 Output includes one dbml file for each database and one additional dbml file for all the spreadsheets. 
 
