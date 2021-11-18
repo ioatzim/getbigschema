@@ -21,6 +21,86 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 ### 1. Turn DBT output files to DBML
 DBT (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views. Details of these tables and views are included in dbt-output files manifest.json and catalog.json. Getbigschema can read these files and produce dbml reports. The dbml file looks like below:
 
+##### manifest.json example:
+```
+{
+    "metadata": {...},
+    "nodes":
+    {
+        "model.demo_dbt.users":
+        {"raw_sql": "select ...", "compiled": true, "resource_type": "model",
+            "depends_on":
+            {   "macros": [],
+                "nodes":
+                [   "source.demo_dbt.user",
+                    "source.demo_dbt.invitation"]
+            },
+            "config": {...}, "database": "demo_dev",
+            "schema": "demo", "fqn": ["demo_dbt", ""], "unique_id": "model.demo_dbt.users",
+            "package_name": "demo_dbt", "root_path": "", "path": "all_users.sql",
+            "original_file_path": "models/all_users.sql", "name": "all_users",
+            "alias": "all_users", "checksum": {...}, "tags": [], "refs": [],
+            "sources": [...], "description": "Select *all* entries in source `user` table",
+            "columns":
+            {   "user_id":
+                {
+                    "name": "user_id",
+                    "description": "",
+                    "meta":
+                    {},
+                    "data_type": null,
+                    "quote": null,
+                    "tags":
+                    []
+                }
+            },
+            "meta": {}, "docs": {"show": true}, "patch_path": "models/all.yml",
+            "build_path": "", "deferred": false, "unrendered_config": {...},
+            "compiled_sql": "", "extra_ctes_injected": true, "extra_ctes": [], "relation_name": ""
+        }
+    },            
+    "sources":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        {   "fqn": [...], "database": "", "schema": "", "unique_id": "", "package_name": "",
+            "root_path": "", "path": "", "original_file_path": "", "name": "", "source_name": "",
+            "source_description": "", "loader": "", "identifier": "", "resource_type": "source",
+            "quoting": {...}, "loaded_at_field": null, "freshness": {...}, "external": null,
+            "description": "The \"Generic Metrics Master\" table of the respective target\n",
+            "columns": {}, "meta": {}, "source_meta": {}, "tags": [], "config": {...},
+            "patch_path": null, "unrendered_config": {}, "relation_name": ""
+        }
+    },    
+    "macros":
+    {
+        "macro.demo_dbt.test": {...}
+    },    
+    "docs": {...},  
+    "exposures": {},
+    "selectors": {},
+    "disabled": [],
+    "parent_map":
+    {
+        "model.demo_dbt.users":
+        [
+            "source.demo_dbt.events.generic_metrics_master"
+			
+        ],
+		"source.demo_dbt.events.generic_metrics_master":
+		[]
+    },
+    "child_map":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        [
+            "model.demo_dbt.users"
+        ],
+		"model.demo_dbt.users":
+		[]
+    }
+	}
+```
+
 ##### catalog.json example:
 ```
 {
