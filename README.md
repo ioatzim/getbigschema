@@ -45,6 +45,12 @@ table "model.demo_dbt.users" [gridX: 1] {
 //ref_children: []
 ```
 
+Output also includes topological_sort.json, a file that includes all tables, with their gridX order. This order represents the stage that the table was created at, for example it is 0 for source tables, 1 for tables (or views) created based on source ones, 2 for tables (or views) created based on tables of order 0 and 1 etc. The      general rule is that each table has an order equal with the max order of its creators, plus 1  
+
+```
+{"source.demo_dbt.events.generic_metrics_master": 0, "model.demo_dbt.users": 1}
+```
+
 #### Example2: # For SQL DBs (BigQuery, RedShift, etc.)
 getbigschema can turn SQL schemas to dbml files. Most databases are supported. User must enter the database details in schema_to_dbml.py file in the folollowing field:
 
