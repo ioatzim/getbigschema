@@ -21,6 +21,55 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 ### 1. Turn DBT output files to DBML
 DBT (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views. Details of these tables and views are included in dbt-output files manifest.json and catalog.json. Getbigschema can read these files and produce dbml reports. The dbml file looks like below:
 
+##### catalog.json example:
+```
+{
+    "metadata": {...},
+    "nodes":
+    {
+        "model.demo_dbt.users":
+        {
+            "metadata": {...},
+            "columns":
+            {
+                "ACCOUNT_ID":
+                {
+                    "type": "NUMBER",
+                    "index": 1,
+                    "name": "ACCOUNT_ID",
+                    "comment": null
+                },
+                "NAME": {...},
+                "ACCOUNT_STATUS_ID": {...},
+                "TAX_IDENTIFIER": {...},
+                "CREATED_AT": {...}
+            },
+            "unique_id": "model.demo_dbt"
+        }
+    },    
+    "sources":
+    {
+        "source.demo_dbt.events.generic_metrics_master":
+        {
+            "metadata": {...},
+            "columns":
+            {
+                "FEATURE_ID":
+                {
+                    "type": "NUMBER",
+                    "index": 1,
+                    "name": "FEATURE_ID",
+                    "comment": null
+                },
+                "NAME": {...}
+            },
+            "unique_id": "source.demo_dbt"
+        }
+    },    
+    "errors": null
+}
+```
+
 ##### dbml_file example:
 ```
 table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
