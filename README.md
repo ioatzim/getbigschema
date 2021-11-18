@@ -5,20 +5,20 @@ Upload dbmls to API
 ## Requirements
 Requires Python 3.6 or above. ???
 
-## Main features
-<mark>The main features provided by getbigschema are:
-Generating dbml files, from existing databases and spreadsheets</mark>
-Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
-Uploading dbml files to API
-Requesting dbml files from API
+### Main features
+The main features provided by getbigschema are:
+* Generating dbml files, from existing databases and spreadsheets
+* Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
+* Uploading dbml files to API
+* Requesting dbml files from API
 
-## Usage
+### Usage
 Code can be executed in any Python interpreter/terminal or framework, including Jupyter, Conda, Pycharm, etc
 
-## Examples
+### Examples
 
 
-### Example1: # DBT
+#### Example1: # DBT
 DBT example --> manifest.json, .. --> to how to run "dbt2dbml.py"
 
 #### Example2: # For SQL DBs (BigQuery, RedShift, etc.)
@@ -29,7 +29,7 @@ DBT example --> manifest.json, .. --> to how to run "dbt2dbml.py"
 
 
 
-## Code of Conduct
+### Code of Conduct
 All contributors are expected to follow the PyPA Code of Conduct.
 
 ----------------------------------------------
