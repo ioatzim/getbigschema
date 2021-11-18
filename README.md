@@ -6,8 +6,8 @@ Upload dbmls to API
 Requires Python 3.6 or above. ???
 
 ## Main features
-> The main features provided by getbigschema are:
-> Generating dbml files, from existing databases and spreadsheets
+<mark>The main features provided by getbigschema are:
+Generating dbml files, from existing databases and spreadsheets</mark>
 Generating dbml files, from existing manifest.json and catalog.json files that are produced with dbt methods
 Uploading dbml files to API
 Requesting dbml files from API
