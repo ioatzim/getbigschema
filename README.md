@@ -19,7 +19,31 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 
 
 #### Example1: # DBT
-DBT example --> manifest.json, .. --> to how to run "dbt2dbml.py"
+DBT (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views. Details of these tables and views are included in dbt-output files manifest.json and catalog.json. Getbigschema can read these files and produce dbml reports. The dbml file looks like below:
+
+###### dbml_file example
+```
+table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
+   "FEATURE_ID" NUMBER
+   "NAME" TEXT
+   Note: "BASE TABLE"
+}
+
+//ref_parents: []
+//ref_children: ['model.demo_dbt.users']
+
+table "model.demo_dbt.users" [gridX: 1] {
+   "ACCOUNT_ID" NUMBER
+   "NAME" TEXT
+   "ACCOUNT_STATUS_ID" NUMBER
+   "TAX_IDENTIFIER" TEXT
+   "CREATED_AT" TIMESTAMP_NTZ
+   Note: "VIEW"
+}
+
+//ref_parents: ['source.demo_dbt.events.generic_metrics_master']
+//ref_children: []
+```
 
 #### Example2: # For SQL DBs (BigQuery, RedShift, etc.)
 ..--> how to run "schema2dbml.py" for some db (e.g, MySql)
