@@ -18,7 +18,7 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 ### Examples
 
 
-#### Example1: # DBT
+#### Example1: Turn DBT output files to DBML
 DBT (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views. Details of these tables and views are included in dbt-output files manifest.json and catalog.json. Getbigschema can read these files and produce dbml reports. The dbml file looks like below:
 
 ###### dbml_file example
@@ -51,7 +51,9 @@ Output also includes topological_sort.json, a file that includes all tables, wit
 {"source.demo_dbt.events.generic_metrics_master": 0, "model.demo_dbt.users": 1}
 ```
 
-#### Example2: # For SQL DBs (BigQuery, RedShift, etc.)
+full code is included in file ``` dbt_to_dbml.py ```
+
+#### Example2: Turn SQL schemas and individual sheets to DBML
 getbigschema can turn SQL schemas to dbml files. Most databases are supported. User must enter the database details in schema_to_dbml.py file in the folollowing field:
 
 ```
@@ -70,10 +72,31 @@ google_sheets = [
 
 Output includes one dbml file for each database and one additional dbml file for all the spreadsheets. 
 
-#### Example3: # POST to bigschema.io app
---> how to run "dbml2draw.py"
+full code is included in file ``` schem_to_dbml.py ```
 
+#### Example3: Upload DBML files to bigschema.io app
+We can upload dbml files to bigschema.io app, executing the file dbml_to_api.py
+All we need is the API url and a folder with all dbml files to upload
+When upload is completed, api returns a unique id per file.
+All ids are save in the file "response_ids.json", in key-value pairs, as below:
 
+```
+{
+"file_1.dmbl": "6192b2c21c2a512293fea622",
+"file_2.dmbl": "6172a2c21f2b3a17793fqa342"
+}
+```
+
+full code is included in file ``` dbml_to_api.py ```
+
+#### Example4: Retreive DBML files from bigschema.io app
+Using the API url and the unique id of the file form previous step, we can retreive the file from the API with the following 2 commands:
+
+```
+res = requests.get(f'{url}/{id}')
+file = json.loads(res.json()['contents'])
+```
+full code is included in file ``` dbml_from_api.py ```
 
 ### Code of Conduct
 All contributors are expected to follow the PyPA Code of Conduct.
