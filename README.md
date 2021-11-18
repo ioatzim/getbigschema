@@ -231,4 +231,4 @@ file = json.loads(res.json()['contents'])
 *full code is included in file ``` dbml_from_api.py ```*
 
 ### Code of Conduct
-All contributors are expected to follow the PyPA Code of Conduct.
+All contributors are expected to follow the [PyPA Code of Conduct](https://www.pypa.io/en/latest/code-of-conduct/).
