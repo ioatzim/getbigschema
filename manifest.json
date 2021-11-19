@@ -62,10 +62,10 @@
             "unique_id": "model.demo_dbt.users",
             "package_name": "demo_dbt",
             "root_path": "",
-            "path": "all_users.sql",
-            "original_file_path": "models/all_users.sql",
-            "name": "all_users",
-            "alias": "all_users",
+            "path": "users.sql",
+            "original_file_path": "models/users.sql",
+            "name": "users",
+            "alias": "users",
             "checksum":
             {
                 "name": "demo",
@@ -123,13 +123,13 @@
     },            
     "sources":
     {
-        "source.demo_dbt.events.generic_metrics_master":
+        "source.demo_dbt.events.master":
         {
             "fqn":
             [
                 "demo_dbt",
                 "events",
-                "generic_metrics_master"
+                "master"
             ],
             "database": "",
             "schema": "",
@@ -159,7 +159,7 @@
                 "filter": null
             },
             "external": null,
-            "description": "The \"Generic Metrics Master\" table of the respective target\n",
+            "description": "The \"Master\" table of the respective target\n",
             "columns":
             {},
             "meta":
@@ -232,15 +232,15 @@
     {
         "model.demo_dbt.users":
         [
-            "source.demo_dbt.events.generic_metrics_master"
+            "source.demo_dbt.events.master"
 			
         ],
-		"source.demo_dbt.events.generic_metrics_master":
+		"source.demo_dbt.events.master":
 		[]
     },
     "child_map":
     {
-        "source.demo_dbt.events.generic_metrics_master":
+        "source.demo_dbt.events.master":
         [
             "model.demo_dbt.users"
         ],
