@@ -1,6 +1,5 @@
 # getbigschema
-Creation of dbml files from given databases and spreadsheets.
-Upload dbmls to API
+POST DBMLs to bigschema.io app. Configure and create DBML files from databases, data flows and spreadsheets.
 
 ## Requirements
 Requires Python 3.6 or above. ???
