@@ -23,11 +23,11 @@
             },
             "columns":
             {
-                "ACCOUNT_ID":
+                "USER_ID":
                 {
                     "type": "NUMBER",
                     "index": 1,
-                    "name": "ACCOUNT_ID",
+                    "name": "USER_ID",
                     "comment": null
                 },
                 "NAME":
@@ -37,18 +37,18 @@
                     "name": "NAME",
                     "comment": null
                 },
-                "ACCOUNT_STATUS_ID":
+                "STATUS_ID":
                 {
                     "type": "NUMBER",
                     "index": 3,
-                    "name": "ACCOUNT_STATUS_ID",
+                    "name": "STATUS_ID",
                     "comment": null
                 },
-                "TAX_IDENTIFIER":
+                "SOCIAL_ID":
                 {
                     "type": "TEXT",
                     "index": 4,
-                    "name": "TAX_IDENTIFIER",
+                    "name": "SOCIAL_ID",
                     "comment": null
                 },
                 "CREATED_AT":
@@ -64,24 +64,24 @@
     },    
     "sources":
     {
-        "source.demo_dbt.events.generic_metrics_master":
+        "source.demo_dbt.events.master":
         {
             "metadata":
             {
                 "type": "BASE TABLE",
                 "schema": "demo",
-                "name": "FEATURE",
+                "name": "EVENT",
                 "database": "demo",
                 "comment": null,
                 "owner": "TESTA"
             },
             "columns":
             {
-                "FEATURE_ID":
+                "EVENT_ID":
                 {
                     "type": "NUMBER",
                     "index": 1,
-                    "name": "FEATURE_ID",
+                    "name": "EVENT_ID",
                     "comment": null
                 },
                 "NAME":
