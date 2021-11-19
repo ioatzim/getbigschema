@@ -45,11 +45,11 @@ DBT (data build tool) enables analytics engineers to transform data in their war
 ```
 {"metadata": {...},
  "nodes":  {"model.demo_dbt.users": {...},            
- "sources":{"source.demo_dbt.events.generic_metrics_master": {...},    
+ "sources":{"source.demo_dbt.events.master": {...},    
   ...,
- "parent_map": {"model.demo_dbt.users": ["source.demo_dbt.events.generic_metrics_master"],
-                "source.demo_dbt.events.generic_metrics_master": []},
- "child_map":{"source.demo_dbt.events.generic_metrics_master": ["model.demo_dbt.users"],
+ "parent_map": {"model.demo_dbt.users": ["source.demo_dbt.events.master"],
+                "source.demo_dbt.events.master": []},
+ "child_map":{"source.demo_dbt.events.master": ["model.demo_dbt.users"],
 	      "model.demo_dbt.users": [] } }
 ```
 
@@ -57,14 +57,14 @@ DBT (data build tool) enables analytics engineers to transform data in their war
 ```
 {"metadata": {...},
  "nodes": {"model.demo_dbt.users": {...} },    
- "sources": {...},    
+ "sources": {"source.demo_dbt.events.master": {...} },    
  "errors": null }
 ```
 
 ##### dbml_file example:
 ```
-table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
-   "FEATURE_ID" NUMBER
+table "source.demo_dbt.events.master" [gridX: 0] {
+   "EVENT_ID" NUMBER
    "NAME" TEXT
    Note: "BASE TABLE"
 }
@@ -73,15 +73,15 @@ table "source.demo_dbt.events.generic_metrics_master" [gridX: 0] {
 //ref_children: ['model.demo_dbt.users']
 
 table "model.demo_dbt.users" [gridX: 1] {
-   "ACCOUNT_ID" NUMBER
+   "USER_ID" NUMBER
    "NAME" TEXT
-   "ACCOUNT_STATUS_ID" NUMBER
-   "TAX_IDENTIFIER" TEXT
+   "STATUS_ID" NUMBER
+   "SOCIAL_ID" TEXT
    "CREATED_AT" TIMESTAMP_NTZ
    Note: "VIEW"
 }
 
-//ref_parents: ['source.demo_dbt.events.generic_metrics_master']
+//ref_parents: ['source.demo_dbt.events.master']
 //ref_children: []
 ```
 
@@ -89,7 +89,7 @@ Output also includes topological_sort.json, a file that includes all tables, wit
 
 ##### topological_sort.json file example:
 ```
-{"source.demo_dbt.events.generic_metrics_master": 0, "model.demo_dbt.users": 1}
+{"source.demo_dbt.events.master": 0, "model.demo_dbt.users": 1}
 ```
 
 *full code is included in file ``` dbt_to_dbml.py ```*
