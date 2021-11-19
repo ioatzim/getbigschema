@@ -17,7 +17,7 @@ Code can be executed in any Python interpreter/terminal or framework, including 
 ## Examples
 
 ### 1. Turn SQL schemas and individual sheets to DBML
-getbigschema can turn SQL schemas to dbml files. Most databases are supported. User must enter the database details in schema_to_dbml.py file in the folollowing field:
+getbigschema can turn SQL schemas to dbml files. Most databases are supported. User must enter the database details in schema_to_dbml.py file in the following field:
 
 ```
 databases = [
