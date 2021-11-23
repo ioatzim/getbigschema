@@ -1,1 +1,1 @@
-{"source.demo_dbt.events.master": 0, "model.demo_dbt.users": 1}
+{"source.test_db.changes": 0, "basic.test_db.users": 1}
