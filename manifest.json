@@ -123,12 +123,12 @@
     },            
     "sources":
     {
-        "source.test_db.events":
+        "source.test_db.changes":
         {
             "fqn":
             [
                 "demo_db",
-                "events"
+                "changes"
             ],
             "database": "",
             "schema": "",
@@ -231,15 +231,15 @@
     {
         "basic.test_db.users":
         [
-            "source.test_db.events"
+            "source.test_db.changes"
 			
         ],
-		"source.test_db.events":
+		"source.test_db.changes":
 		[]
     },
     "child_map":
     {
-        "source.test_db.events":
+        "source.test_db.changes":
         [
             "model.test_db.users"
         ],
