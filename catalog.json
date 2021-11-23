@@ -3,59 +3,45 @@
     {
         "dbt_schema_version": "catalog.json",
         "dbt_version": "0.19.1",
-        "generated_at": "2021-11-06T23:07:35.666246Z",
+        "generated_at": "2021-11-22T23:07:35.382246Z",
         "invocation_id": "",
         "env":
         {}
     },
     "nodes":
     {
-        "model.demo_dbt.users":
+        "basic.test_db.users":
         {
             "metadata":
             {
                 "type": "VIEW",
-                "schema": "demo",
-                "name": "ACCOUNTS",
-                "database": "demo_dev",
+                "schema": "test",
+                "name": "users",
+                "database": "test_db",
                 "comment": null,
-                "owner": "demo_owner"
+                "owner": "test_owner"
             },
             "columns":
             {
-                "USER_ID":
+                "userid":
                 {
                     "type": "NUMBER",
                     "index": 1,
-                    "name": "USER_ID",
+                    "name": "userid",
                     "comment": null
                 },
-                "NAME":
+                "name":
                 {
                     "type": "TEXT",
                     "index": 2,
-                    "name": "NAME",
+                    "name": "name",
                     "comment": null
                 },
-                "STATUS_ID":
-                {
-                    "type": "NUMBER",
-                    "index": 3,
-                    "name": "STATUS_ID",
-                    "comment": null
-                },
-                "SOCIAL_ID":
+                "occupation":
                 {
                     "type": "TEXT",
-                    "index": 4,
-                    "name": "SOCIAL_ID",
-                    "comment": null
-                },
-                "CREATED_AT":
-                {
-                    "type": "TIMESTAMP_NTZ",
-                    "index": 5,
-                    "name": "CREATED_AT",
+                    "index": 3,
+                    "name": "occupation",
                     "comment": null
                 }
             },
@@ -64,35 +50,35 @@
     },    
     "sources":
     {
-        "source.demo_dbt.events.master":
+        "source.test_db.events":
         {
             "metadata":
             {
                 "type": "BASE TABLE",
                 "schema": "demo",
-                "name": "EVENT",
-                "database": "demo",
+                "name": "event",
+                "database": "test",
                 "comment": null,
-                "owner": "TESTA"
+                "owner": "tester"
             },
             "columns":
             {
-                "EVENT_ID":
+                "eventid":
                 {
                     "type": "NUMBER",
                     "index": 1,
-                    "name": "EVENT_ID",
+                    "name": "eventid",
                     "comment": null
                 },
-                "NAME":
+                "event_type":
                 {
                     "type": "TEXT",
                     "index": 2,
-                    "name": "NAME",
+                    "name": "event_type",
                     "comment": null
                 }
             },
-            "unique_id": "source.demo_dbt"
+            "unique_id": "source.test_db"
         }
     },    
     "errors": null
