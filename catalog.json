@@ -50,31 +50,31 @@
     },    
     "sources":
     {
-        "source.test_db.events":
+        "source.test_db.changes":
         {
             "metadata":
             {
                 "type": "BASE TABLE",
                 "schema": "demo",
-                "name": "event",
+                "name": "change",
                 "database": "test",
                 "comment": null,
                 "owner": "tester"
             },
             "columns":
             {
-                "eventid":
+                "changeid":
                 {
                     "type": "NUMBER",
                     "index": 1,
-                    "name": "eventid",
+                    "name": "changeid",
                     "comment": null
                 },
-                "event_type":
+                "change_type":
                 {
                     "type": "TEXT",
                     "index": 2,
-                    "name": "event_type",
+                    "name": "change_type",
                     "comment": null
                 }
             },
