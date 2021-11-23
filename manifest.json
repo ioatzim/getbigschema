@@ -3,7 +3,7 @@
     {
         "dbt_schema_version": "manifest.json",
         "dbt_version": "0.19.1",
-        "generated_at": "2021-11-06T23:07:29.552472Z",
+        "generated_at": "2021-11-22T10:07:29.382472Z",
         "invocation_id": "",
         "env":
         {},
@@ -14,19 +14,19 @@
     },
     "nodes":
     {
-        "model.demo_dbt.users":
+        "basic.users":
         {
             "raw_sql": "select ...",
             "compiled": true,
-            "resource_type": "model",
+            "resource_type": "basic",
             "depends_on":
             {
                 "macros":
                 [],
                 "nodes":
                 [
-                    "source.demo_dbt.user",
-                    "source.demo_dbt.invitation"
+                    "source.user",
+                    "source.status"
                 ]
             },
             "config":
@@ -52,18 +52,18 @@
                 "pre-hook":
                 []
             },
-            "database": "demo_dev",
-            "schema": "demo",
+            "database": "test_db",
+            "schema": "test",
             "fqn":
             [
-                "demo_dbt",
+                "test_db",
                 ""
             ],
-            "unique_id": "model.demo_dbt.users",
-            "package_name": "demo_dbt",
+            "unique_id": "basic.users",
+            "package_name": "test_db",
             "root_path": "",
             "path": "users.sql",
-            "original_file_path": "models/users.sql",
+            "original_file_path": "basic/users.sql",
             "name": "users",
             "alias": "users",
             "checksum":
@@ -107,7 +107,7 @@
             {
                 "show": true
             },
-            "patch_path": "models/all.yml",
+            "patch_path": "basic/full.yml",
             "build_path": "",
             "deferred": false,
             "unrendered_config":
@@ -123,13 +123,12 @@
     },            
     "sources":
     {
-        "source.demo_dbt.events.master":
+        "source.test_db.events":
         {
             "fqn":
             [
-                "demo_dbt",
-                "events",
-                "master"
+                "demo_db",
+                "events"
             ],
             "database": "",
             "schema": "",
@@ -180,10 +179,10 @@
     },    
     "macros":
     {
-        "macro.demo_dbt.test":
+        "macro.test_db.test":
         {
             "unique_id": "",
-            "package_name": "demo_dbt",
+            "package_name": "test_db",
             "root_path": "",
             "path": "",
             "original_file_path": "",
@@ -211,14 +210,14 @@
     },    
     "docs":
     {
-        "demo_dbt.__overview__":
+        "test_db.__overview__":
         {
-            "unique_id": "demo_dbt.__overview__",
-            "package_name": "demo_dbt",
+            "unique_id": "test_db.__overview__",
+            "package_name": "test_db",
             "root_path": "",
-            "path": "overview_page.md",
-            "original_file_path": "doc/overview_page.md",
-            "name": "__overview__",
+            "path": "review.md",
+            "original_file_path": "review_page.md",
+            "name": "__review__",
             "block_contents": ""
         }
     },  
@@ -230,21 +229,21 @@
     [],
     "parent_map":
     {
-        "model.demo_dbt.users":
+        "basic.test_db.users":
         [
-            "source.demo_dbt.events.master"
+            "source.test_db.events"
 			
         ],
-		"source.demo_dbt.events.master":
+		"source.test_db.events":
 		[]
     },
     "child_map":
     {
-        "source.demo_dbt.events.master":
+        "source.test_db.events":
         [
-            "model.demo_dbt.users"
+            "model.test_db.users"
         ],
-		"model.demo_dbt.users":
+		"model.test_db.users":
 		[]
     }
 	}
