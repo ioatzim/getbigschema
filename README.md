@@ -63,8 +63,8 @@ DBT (data build tool) enables analytics engineers to transform data in their war
 ##### dbml_file example:
 ```
 table "source.test_db.changes" [gridX: 0] {
-   "eventid" NUMBER
-   "event_type" TEXT
+   "changeid" NUMBER
+   "change_type" TEXT
    Note: "BASE TABLE"
 }
 
