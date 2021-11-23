@@ -43,44 +43,42 @@ DBT (data build tool) enables analytics engineers to transform data in their war
 ##### manifest.json example:
 ```
 {"metadata": {...},
- "nodes":  {"model.demo_dbt.users": {...},            
- "sources":{"source.demo_dbt.events.master": {...},    
+ "nodes":  {"basic.test_db.users": {...},            
+ "sources":{"source.test_db.changes": {...},    
   ...,
- "parent_map": {"model.demo_dbt.users": ["source.demo_dbt.events.master"],
-                "source.demo_dbt.events.master": []},
- "child_map":{"source.demo_dbt.events.master": ["model.demo_dbt.users"],
-	      "model.demo_dbt.users": [] } }
+ "parent_map": {"basic.test_db.users": ["source.test_db.changes"],
+                "source.test_db.changes": []},
+ "child_map":{"source.test_db.changes": ["basic.test_db.users"],
+	      "basic.test_db.users": [] } }
 ```
 
 ##### catalog.json example:
 ```
 {"metadata": {...},
- "nodes": {"model.demo_dbt.users": {...} },    
- "sources": {"source.demo_dbt.events.master": {...} },    
+ "nodes": {"basic.test_db.users": {...} },    
+ "sources": {"source.test_db.changes": {...} },    
  "errors": null }
 ```
 
 ##### dbml_file example:
 ```
-table "source.demo_dbt.events.master" [gridX: 0] {
-   "EVENT_ID" NUMBER
-   "NAME" TEXT
+table "source.test_db.changes" [gridX: 0] {
+   "eventid" NUMBER
+   "event_type" TEXT
    Note: "BASE TABLE"
 }
 
 //ref_parents: []
-//ref_children: ['model.demo_dbt.users']
+//ref_children: ['basic.test_db.users']
 
-table "model.demo_dbt.users" [gridX: 1] {
-   "USER_ID" NUMBER
-   "NAME" TEXT
-   "STATUS_ID" NUMBER
-   "SOCIAL_ID" TEXT
-   "CREATED_AT" TIMESTAMP_NTZ
+table "basic.test_db.users" [gridX: 1] {
+   "userid" NUMBER
+   "name" TEXT
+   "occupation" TEXT
    Note: "VIEW"
 }
 
-//ref_parents: ['source.demo_dbt.events.master']
+//ref_parents: ['source.test_db.changes']
 //ref_children: []
 ```
 
@@ -88,7 +86,7 @@ Output also includes topological_sort.json, a file that includes all tables, wit
 
 ##### topological_sort.json file example:
 ```
-{"source.demo_dbt.events.master": 0, "model.demo_dbt.users": 1}
+{"source.test_db.changes": 0, "basic.test_db.users": 1}
 ```
 
 *full code is included in file ``` dbt_to_dbml.py ```*
