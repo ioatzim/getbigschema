@@ -241,9 +241,9 @@
     {
         "source.test_db.changes":
         [
-            "model.test_db.users"
+            "basic.test_db.users"
         ],
-		"model.test_db.users":
+		"basic.test_db.users":
 		[]
     }
 	}
