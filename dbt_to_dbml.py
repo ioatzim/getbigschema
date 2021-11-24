@@ -77,10 +77,11 @@ with open(f"{db_name}_full.dmbl", "w") as output:
                 comment = comment.replace('\n', '')
                 output.write('   "' + column['name'] + '" ' +  str(column['data_type']) + comment + '\n') 
             output.write("}\n")
-        output.write("//ref_parents: " + str(man['parent_map'][table_name]))
+        for parent in man['parent_map'][table_name]:
+            output.write("//ref: " + parent + ' - ' + table_name + '\n')
+        for child in man['child_map'][table_name]:
+            output.write("//ref: " + table_name + ' - ' + child + '\n')
         output.write('\n')
-        output.write("//ref_children: " + str(man['child_map'][table_name]))
-        output.write('\n\n')
 
 #save order/gridX of each table in json format (key:value pairs)
 with open('topological_sort.json', 'w') as f:
