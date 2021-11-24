@@ -1,11 +1,10 @@
 table "source.test_db.changes" [gridX: 0] {
-   "id" NUMBER
-   "name" TEXT
+   "changeid" NUMBER
+   "change_type" TEXT
    Note: "BASE TABLE"
 }
 
-ref_parents: []
-ref_children: ['model.demo_dbt.users']
+//ref: source.test_db.changes - basic.test_db.users
 
 table "basic.test_db.users" [gridX: 1] {
    "userid" NUMBER
@@ -14,5 +13,4 @@ table "basic.test_db.users" [gridX: 1] {
    Note: "VIEW"
 }
 
-ref_parents: ['source.test_db.changes']
-ref_children: []
+//ref: source.test_db.changes - basic.test_db.users
