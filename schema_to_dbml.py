@@ -29,7 +29,7 @@ for database in databases:
     m = MetaData()
     m.reflect(engine)
     refs = []       
-    with open(f"{database['name']}.dmbl", "w") as output:
+    with open(f"{database['name']}.dbml", "w") as output:
         for table_name in m.tables.values():
             output.write('table "'+table_name.name+'" {\n')
             for column in table_name.columns:
@@ -63,7 +63,7 @@ google_sheets = [
 ]
 
 #The following generates one dbml file for all google sheets. Dbml file is saved in the same folder with the python script:
-with open("spreadsheets.dmbl", "w") as output:
+with open("spreadsheets.dbml", "w") as output:
     for file in google_sheets:
         output.write('table "'+ file['name'] +'" {\n')
         df=pd.read_sql('select * from "' + file['url'] + '"', conn)
