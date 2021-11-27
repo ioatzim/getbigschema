@@ -51,7 +51,7 @@ while True:
 
 all_tables = {k: v for k, v in sorted(gridx.items(), key=lambda item: item[1])}       
 
-with open(f"{db_name}_full.dmbl", "w") as output:
+with open(f"{db_name}_full.dbml", "w") as output:
     for table_name in all_tables: 
         output.write('table "' + table_name + '" [gridX: ' + str(gridx[table_name]) + '] {\n')
         if table_name in cat['nodes'] or table_name in cat['sources']:
