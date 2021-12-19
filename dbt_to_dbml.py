@@ -65,7 +65,7 @@ with open(f"{db_name}_full.dbml", "w") as output:
                 comment = comment.replace('\n', '')
                 output.write('   "' + column['name'] + '" ' +  str(column['type']) + comment + '\n') 
             output.write('   Note: "' + table['metadata']['type'] + '"\n')
-            output.write("}\n\n")
+            output.write("}\n")
         elif table_name in man['nodes'] or table_name in man['sources']:
             if table_name in man['nodes']:
                 table = man['nodes'][table_name]
@@ -75,10 +75,10 @@ with open(f"{db_name}_full.dbml", "w") as output:
                 column = table['columns'][column]
                 comment = '' if (column['description'] is None or column['description'] in ['', ' ']) else ' // ' + column['description']
                 comment = comment.replace('\n', '')
-                output.write('   "' + column['name'] + '" ' +  str(column['data_type']) + comment + '\n') 
-            output.write("}\n")
+                output.write('   "' + column['name'] + '" ' +  str(column['data_type']) + comment + '\n')            
         for parent in man['parent_map'][table_name]:
-            output.write('Flow: "' + parent + '" > "' + table_name + '"\n')
+            output.write('\n')
+            output.write('Flow: "' + parent + '" > "' + table_name + '"')
         output.write('\n')
 
 #save order/gridX of each table in json format (key:value pairs)
