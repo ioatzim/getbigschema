@@ -4,8 +4,6 @@ table "source.test_db.changes" [gridX: 0] {
    Note: "BASE TABLE"
 }
 
-//ref: source.test_db.changes - basic.test_db.users
-
 table "basic.test_db.users" [gridX: 1] {
    "userid" NUMBER
    "name" TEXT
@@ -13,4 +11,4 @@ table "basic.test_db.users" [gridX: 1] {
    Note: "VIEW"
 }
 
-//ref: source.test_db.changes - basic.test_db.users
+Flow: "source.test_db.changes" > "basic.test_db.users"
