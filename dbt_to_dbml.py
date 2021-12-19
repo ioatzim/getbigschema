@@ -78,9 +78,9 @@ with open(f"{db_name}_full.dbml", "w") as output:
                 output.write('   "' + column['name'] + '" ' +  str(column['data_type']) + comment + '\n') 
             output.write("}\n")
         for parent in man['parent_map'][table_name]:
-            output.write("//ref: " + parent + ' - ' + table_name + '\n')
+            output.write('Flow: "' + parent + '" > "' + table_name + '"\n')
         for child in man['child_map'][table_name]:
-            output.write("//ref: " + table_name + ' - ' + child + '\n')
+            output.write('Flow: "' + table_name + '" > "' + child + '"\n')
         output.write('\n')
 
 #save order/gridX of each table in json format (key:value pairs)
