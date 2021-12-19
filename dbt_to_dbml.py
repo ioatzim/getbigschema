@@ -21,20 +21,20 @@ try:
 except:
     db_name = 'undefined'
 
-refs=[]
+flows=[]
 
 for table_name in all_tables: 
-    for ref_table in man['parent_map'][table_name]:           
-        refs.append((ref_table, table_name))
+    for flow_table in man['parent_map'][table_name]:           
+        flows.append((flow_table, table_name))
         
-refs=set(refs)
+flows=set(flows)
 
 gridx = {i:'' for i in all_tables}
 
 for x in all_tables:
-    if len([i for i in refs if i[1]==x]) == 0:
+    if len([i for i in flows if i[1]==x]) == 0:
         gridx[x] = 0
-        for k in refs:
+        for k in flows:
             if k[0]==x:
                 gridx[k[1]]=1
  
